@@ -27,7 +27,7 @@ class AbstractPerson(models.Model):
 
     def save(self, *args, **kwargs):
         if self.phone_number.startswith('0'):
-            self.phone_number = '+996'
+            self.phone_number.replace('0','+996',1)
         super().save(*args, **kwargs)
 
 
